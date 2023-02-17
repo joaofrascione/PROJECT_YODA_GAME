@@ -1,0 +1,79 @@
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+/* TELA INICIAL */
+
+@font-face {
+    font-family: 'Starjedi' ;
+    src: url('Starjedi.ttf');
+}
+
+#container {
+width: 100%;
+height: 100vh;
+}
+
+#start-screen {
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #0B0A13;
+background-image: url('./src/hyperspace-final-2.gif');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+
+h1{
+    font-size: 40px;
+    color: white;
+    font-family: 'Starjedi';
+    
+}
+
+h2{
+    font-size: 20px;
+    color: yellow;
+    font-family: 'arial';
+    font-style: italic;
+    padding-bottom: 50px;
+}
+
+
+
+button{
+    width: 60px;
+    height: 30px;
+    margin-bottom: 60px;
+}
+
+audio{
+    display: none;
+}
+
+
+/* TELA DOIS */
+
+#game-screen {
+width: 100%;
+height: 100%;  
+position: relative; /* itens devem flutuar*/
+overflow: hidden;  /* caso saia da tela de jogo não aparece*/
+background-image: url('./src/BasicWeightyFeline-size_restricted.gif');
+}
+
+
+
+.hidden {
+    display: none !important;
+}
+
+
+
