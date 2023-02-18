@@ -11,8 +11,7 @@ const startButton = document.querySelector('#start-screen');
 startButton.addEventListener('click', () => {
     startScreen.classList.add('hidden');
     gameScreen.classList.remove('hidden');
-    game.player = new Player ();
-    game.playing = true;
+    game.start();
 })
 
 
