@@ -5,6 +5,7 @@ class Game {
         this.comets = [];
         this.deathStars = [];
         this.spaces = [];
+        this.darth = [];
         this.Player = null;
         this.playing = false;
 
@@ -28,12 +29,12 @@ class Game {
     this.deathStars.push(new DeathStar(980, 270));
     this.deathStars.push(new DeathStar(1150, 180));
     this.deathStars.push(new DeathStar(20, 180));
-    this.spaces.push(new Space(150, 20));
-    this.spaces.push(new Space(900, 20));
+    this.spaces = new Space();
+    this.spaces = new Space2();
     this.planet = new Planet();
     this.playing = true;
     }
-
+    
 }
 
 // yoda - jogador
@@ -89,29 +90,6 @@ class Player{
         if(this.y + this.height >= gameScreen.offsetHeight) return;
         this.y += this.speed;
         this.element.style.top =`${this.y}px`;
-    }
-
-    crashedWith(comet){
-        const top = this.y;
-        const bottom = this.y + this.height;
-        const left = this.x;
-        const right = this.x + this.width;
-
-        const obsTop = comet.y
-        const obsBottom = comet.y + comet.height;
-        const obsLeft = comet.x;
-        const obsRight = comet.x + comet.width;
-
-        const out = bottom < obsTop || top > obsBottom || left > obsRight || right < obsLeft;
-        return !out; 
-
-        const crash = this.player.crashedWith(this.obstacles[i]);
-        if(crash){
-            clearInterval(this.intervalId);
-            this.playing = false;
-        }
-
-    
     }
 }
 
@@ -216,11 +194,11 @@ class DeathStar {
 
 //spaceships
 class Space {
-    constructor(x,y){
+    constructor(x){
         this.width = 350;
         this.height = 150;
-        this.x = x;
-        this.y = y;
+        this.x = 150;
+        this.y = 20;
         this.speed = 6;
         this.element = null;
         this.createElement();
@@ -230,7 +208,7 @@ class Space {
 
     createElement(){
         const div = document.createElement('img');
-        div.classList.add('spaces');
+        div.classList.add('spaces1');
         div.style.width = `${this.width}px`;
         div.style.height= `${this.height}px`;
         div.style.position = 'absolute';
@@ -244,6 +222,38 @@ class Space {
         gameScreen.appendChild(this.element);
 
     }
+
+}
+class Space2 {
+    constructor(x){
+        this.width = 350;
+        this.height = 150;
+        this.x = 900;
+        this.y = 20;
+        this.speed = 6;
+        this.element = null;
+        this.createElement();
+        this.show();
+
+    }
+
+    createElement(){
+        const div = document.createElement('img');
+        div.classList.add('spaces2');
+        div.style.width = `${this.width}px`;
+        div.style.height= `${this.height}px`;
+        div.style.position = 'absolute';
+        div.style.top = `${this.y}px`;
+        div.style.left = `${this.x}px`;
+        div.src = "./star-removebg-preview.png";
+        this.element = div;
+
+    }
+    show(){
+        gameScreen.appendChild(this.element);
+
+    }
+
 }
 
 //Planeta - objetivo final

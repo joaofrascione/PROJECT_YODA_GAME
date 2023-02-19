@@ -77,3 +77,64 @@ background-image: url('./src/BasicWeightyFeline-size_restricted.gif');
 
 
 
+/* movimentação cometas*/
+.comets{
+    animation: andarGirar 2.2s linear infinite alternate;
+}
+
+ @keyframes andarGirar{
+    0%{transform: translateX(-80px) rotate(0deg)}
+    100%{transform: translateX(150px) rotate(375deg)}
+ }
+
+ /* movimentação darthvader*/
+ .darth{
+    animation: andar 1.7s linear infinite;
+}
+
+ @keyframes andar{
+    0%{transform: translateX(-700px)}
+    100%{transform: translateX(700px)}
+ }
+
+  /* movimentação espaçonaves*/
+  .spaces1{
+    animation: voar 1.7s linear infinite alternate;
+}
+
+ @keyframes voar{
+    0%{transform: translateX(300px)}
+    100%{transform: translateX(-280px)}
+ }
+
+ .spaces2{
+    animation: voar2 1.7s linear infinite alternate;
+}
+
+ @keyframes voar2{
+    0%{transform: translateX(-377px)}
+    100%{transform: translateX(180px)}
+ }
+
+ /* movimentação deathStars*/
+ .deathStars{
+    animation: float 3s ease-in-out infinite;
+}
+
+ @keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+ }
+ @keyframes gravity{
+    0%{transform: translateX(0px)}
+    100%{transform: translateX(10px)}
+ }
+
