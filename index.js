@@ -1,7 +1,6 @@
 class Game {
   constructor() {
     this.score = 0;
-    this.time = 0;
     this.comets = [];
     this.deathStars = [];
     this.spaces = [];
@@ -37,6 +36,7 @@ class Game {
     this.intervalId = setInterval(this.updateObstacles, 20);
   }
 
+
   updateObstacles = () => {
     this.frames +=1
     this.countScore();
@@ -45,7 +45,6 @@ class Game {
       this.playing = false;
       this.showGameOver();
       clearInterval(this.intervalId);
-      console.log("bateu darth");
     }
 
     const crashSpace1 = this.player.crashWith(this.spaces1);
@@ -85,23 +84,23 @@ class Game {
       this.playing = false;
       this.showGameWin();
       clearInterval(this.intervalId);
-      console.log("bateu planeta");
     }
   }
 
+  //GAME OVER TELA
   showGameOver(){
     document.querySelector('#game-over span').innerHTML = this.score;
     document.querySelector('#game-over').classList.remove('hidden');
   }
 
+  //GAME WIN TELA
   showGameWin(){
     document.querySelector('#game-win span').innerHTML = this.score;
     document.querySelector('#game-win').classList.remove('hidden');
   }
 
  
-
-
+//CONTADOR SEGUNDOS
   countScore(){
         this.score = Math.floor(this.frames / 30);
         document.querySelector('#score').innerHTML = this.score;
@@ -110,7 +109,7 @@ class Game {
     }
 }
 
-// yoda - jogador
+// CLASSE YODA - JOGADOR
 class Player {
   constructor() {
     this.width = 45;
@@ -137,7 +136,7 @@ class Player {
     gameScreen.appendChild(this.element);
   }
 
-  //CONTROLES SETA JOGADOR
+  //CONTROLES SETA DO JOGADOR
 
   moveLeft() {
     if (this.x <= 0) return;
@@ -163,6 +162,7 @@ class Player {
     this.element.style.top = `${this.y}px`;
   }
 
+  //REFERÊNCIA PARA COLISÃO OBSTACULOS
   crashWith(element) {
     const obstacle = element.element.getBoundingClientRect();
     const top = this.y;
@@ -179,6 +179,7 @@ class Player {
     return !out;
   }
 
+   //REFERÊNCIA PARA COLISÃO PLANETA TERRA
   crashWithPlanet(element) {
     const obstacle = element.element.getBoundingClientRect();
     const top = this.y;
@@ -196,9 +197,10 @@ class Player {
   }
 }
 
+
 //OBSTACULOS
 
-//comets
+//cometas
 class Comet {
   constructor(x, y) {
     this.width = 50;
@@ -256,7 +258,7 @@ class DarthVader {
   }
 }
 
-//deathStars
+//estrelas da morte
 class DeathStar {
   constructor(x, y) {
     this.width = 42;
@@ -285,7 +287,7 @@ class DeathStar {
   }
 }
 
-//spaceships
+//espaçonaves
 class Space1 {
   constructor(x) {
     this.width = 90;
@@ -313,6 +315,7 @@ class Space1 {
     gameScreen.appendChild(this.element);
   }
 }
+
 class Space2 {
   constructor(x) {
     this.width = 90;
