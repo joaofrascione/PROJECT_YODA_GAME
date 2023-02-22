@@ -30,7 +30,7 @@ class Game {
     this.deathStars.push(new DeathStar(980, 270));
     this.deathStars.push(new DeathStar(1150, 180));
     this.deathStars.push(new DeathStar(20, 180));
-    this.spaces1 = new Space();
+    this.spaces1 = new Space1();
     this.spaces2 = new Space2();
     this.planet = new Planet();
     this.playing = true;
@@ -48,13 +48,26 @@ class Game {
       console.log("bateu darth");
     }
 
+    const crashSpace1 = this.player.crashWith(this.spaces1);
+    if (crashSpace1) {
+      this.playing = false;
+      this.showGameOver();
+      clearInterval(this.intervalId);
+    }
+
+    const crashSpace2 = this.player.crashWith(this.spaces2);
+    if (crashSpace2) {
+      this.playing = false;
+      this.showGameOver();
+      clearInterval(this.intervalId);
+    }
+
     for (let i = 0; i < this.comets.length; i++) {
       const crash = this.player.crashWith(this.comets[i]);
       if (crash) {
         this.playing = false;
         clearInterval(this.intervalId);
         this.showGameOver();
-        console.log("bateu cometa");
       }
     }
 
@@ -64,27 +77,6 @@ class Game {
         clearInterval(this.intervalId);
         this.playing = false;
         this.showGameOver();
-        console.log("bateu deathStars");
-      }
-    }
-
-    for (let i = 0; i < this.spaces1.length; i++) {
-      const crash3 = this.player.crashWith(this.spaces1[i]);
-      if (crash3) {
-        clearInterval(this.intervalId);
-        this.playing = false;
-        this.showGameOver();
-        console.log("bateu spaces1");
-      }
-    }
-
-    for (let i = 0; i < this.spaces2.length; i++) {
-      const crash4 = this.player.crashWith(this.spaces2[i]);
-      if (crash4) {
-        clearInterval(this.intervalId);
-        this.playing = false;
-        this.showGameOver();
-        console.log("bateu spaces2");
       }
     }
 
@@ -294,7 +286,7 @@ class DeathStar {
 }
 
 //spaceships
-class Space {
+class Space1 {
   constructor(x) {
     this.width = 90;
     this.height = 50;
