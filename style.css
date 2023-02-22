@@ -69,6 +69,68 @@ overflow: hidden;  /* caso saia da tela de jogo não aparece*/
 background-image: url('./src/BasicWeightyFeline-size_restricted.gif');
 }
 
+#score{
+    position: absolute;
+    top:20px;
+    right: 10px;
+    min-width: 100px;
+    font-size: 25px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+ }
+
+#game-over{
+    position: absolute;
+    background-image: url('./3cf6396713e3256f1148e7fb9b1f9515.gif');
+    color:white;
+    font-weight: bold;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#game-over p:nth-child(2){
+    font-size: 25px;
+}
+
+#game-win{
+    position: absolute;
+    background-image: url('./giphy.gif');
+    color:white;
+    font-weight: bold;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+#game-over p:nth-child(2){
+    font-size: 25px;
+}
+
 
 
 .hidden {
@@ -99,7 +161,7 @@ background-image: url('./src/BasicWeightyFeline-size_restricted.gif');
 
   /* movimentação espaçonaves*/
   .spaces1{
-    animation: voar 1.7s linear infinite alternate;
+    animation: voar 1.3s linear infinite alternate;
 }
 
  @keyframes voar{
@@ -108,7 +170,7 @@ background-image: url('./src/BasicWeightyFeline-size_restricted.gif');
  }
 
  .spaces2{
-    animation: voar2 1.7s linear infinite alternate;
+    animation: voar2 1.3s linear infinite alternate;
 }
 
  @keyframes voar2{
@@ -137,4 +199,5 @@ background-image: url('./src/BasicWeightyFeline-size_restricted.gif');
     0%{transform: translateX(0px)}
     100%{transform: translateX(10px)}
  }
+
 
