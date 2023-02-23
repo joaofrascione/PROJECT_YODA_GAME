@@ -102,7 +102,7 @@ class Game {
  
 //CONTADOR SEGUNDOS
   countScore(){
-        this.score = Math.floor(this.frames / 30);
+        this.score = Math.floor(this.frames / 50);
         document.querySelector('#score').innerHTML = this.score;
         document.querySelector('#score').classList.remove('hidden');
         
@@ -129,7 +129,7 @@ class Player {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./yoda.png";
+    div.src = "./src/yoda.png";
     this.element = div;
   }
   show() {
@@ -221,7 +221,7 @@ class Comet {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./cometas_ajustado.png";
+    div.src = "./src/cometas_ajustado.png";
     this.element = div;
   }
   show() {
@@ -250,7 +250,7 @@ class DarthVader {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./darth_ajustado.png";
+    div.src = "./src/darth_ajustado.png";
     this.element = div;
   }
   show() {
@@ -279,7 +279,7 @@ class DeathStar {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./star_ajustado.png";
+    div.src = "./src/star_ajustado.png";
     this.element = div;
   }
   show() {
@@ -308,7 +308,7 @@ class Space1 {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./space_ajustado.png";
+    div.src = "./src/space_ajustado.png";
     this.element = div;
   }
   show() {
@@ -336,7 +336,7 @@ class Space2 {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./space_ajustado.png";
+    div.src = "./src/space_ajustado.png";
     this.element = div;
   }
   show() {
@@ -365,7 +365,7 @@ class Planet {
     div.style.position = "absolute";
     div.style.top = `${this.y}px`;
     div.style.left = `${this.x}px`;
-    div.src = "./planet.png";
+    div.src = "./src/planet.png";
     this.element = div;
   }
   show() {
