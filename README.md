@@ -6,7 +6,7 @@ Hi! Welcome to my first project in **Ironhack**
 
 Click [here]() to play this game
 
----
+----
 
 ## Introduction
 
