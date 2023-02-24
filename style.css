@@ -12,8 +12,8 @@ box-sizing: border-box;
 }
 
 #container {
-width: 100%;
-height: 100vh;
+width: 1300px;
+height: 600px;
 }
 
 #start-screen {
