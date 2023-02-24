@@ -2,7 +2,8 @@
 
 Hi! Welcome to my first project in **Ironhack**
 
-![game-scren](/src/print.png)
+[![game-scren](/src/print.png)](https://joaofrascione.github.io/PROJECT_YODA_GAME/)
+
 
 Click [here](https://joaofrascione.github.io/PROJECT_YODA_GAME/) to play this game
 
