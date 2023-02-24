@@ -179,7 +179,7 @@ class Player {
     return !out;
   }
 
-   //REFERÊNCIA PARA COLISÃO PLANETA TERRA
+   //REFERÊNCIA PARA COLISÃO - PLANETA TERRA
   crashWithPlanet(element) {
     const obstacle = element.element.getBoundingClientRect();
     const top = this.y;
